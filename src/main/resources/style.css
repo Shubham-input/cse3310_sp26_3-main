@@ -1,0 +1,397 @@
+      /* website background styling */
+      body {
+        background-color: #f2ebe3;
+        display: flex;
+        padding: 40px;
+        font-family: sans-serif;
+      }
+
+      .auth-sidebar {
+        width: 300px;
+      }
+
+      /* card to compartmentalize sections styling */
+      .card {
+        background: white;
+        border: 1px solid #e5e5e5;
+        border-radius: 14px;
+        padding: 22px;
+        margin-bottom: 15px;
+        color: #260f00;
+      }
+
+      /* input fields label styling */
+      label {
+        font-size: 14px;
+        color: #333;
+        display: block;
+        margin-top: 10px;
+      }
+
+      /* input fields styling */
+      input {
+        width: 100%;
+        padding: 10px;
+        margin: 6px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+
+      /* buttons styling */
+      button {
+        width: 100%;
+        padding: 12px;
+        background: #f0a500;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 12px;
+        font-size: 15px;
+      }
+
+      /* buttons hover styling */
+      button:hover {
+        background: #d17102;
+      }
+
+      /* sign up styling */
+      #signup-fields {
+        display: none;
+        margin-top: 15px;
+        border-top: 1px solid;
+      }
+
+      .signup-trigger {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        color: #40404a;
+        font-size: 14px;
+      }
+
+      #main-area {
+        display: flex;
+        flex: 1;
+        margin-left: 40px;
+      }
+
+      #middle {
+        flex: 1;
+        margin-right: 40px;
+        color: #260f00;
+      }
+
+      #middle h2 {
+        margin-top: 0;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .post {
+        background: white;
+        border: 1px solid #e5e5e5;
+        border-radius: 14px;
+        padding: 18px;
+        margin-bottom: 18px;
+        overflow: hidden;
+      }
+
+      .post div {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+      }
+
+      .post-header {
+        font-weight: bold;
+        margin-bottom: 6px;
+        font-size: 15px;
+        color: #000000;
+      }
+
+      .post-icons {
+        margin-top: 12px;
+        font-size: 18px;
+      }
+
+      #message-bar {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        border: 1px solid #e5e5e5;
+        border-radius: 14px;
+        padding: 12px;
+        margin-bottom: 20px;
+      }
+
+      .message-footer {
+        display: flex;
+        justify-content: flex-end;
+        /* Pushes everything to the right */
+        align-items: center;
+        /* Aligns counter and button vertically */
+        gap: 12px;
+        /* Space between counter and button */
+        width: 100%;
+      }
+
+      #sendMsg {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        margin: 0 0 8px 0;
+        min-height: 80px;
+        resize: vertical;
+      }
+
+      #charCounter {
+        width: 100%;
+        text-align: right;
+        font-size: 12px;
+        margin-bottom: 10px;
+        width: auto;
+        font-size: 12px;
+        margin-bottom: 0;
+      }
+
+      .over-limit {
+        color: red;
+      }
+
+      #sendButton {
+        background: #f0a500;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 14px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+        width: auto;
+        margin-top: 0;
+      }
+
+      #sendButton:hover {
+        background: #d17102;
+      }
+
+      #right {
+        width: 220px;
+        color: #260f00;
+      }
+
+      #right h2 {
+        margin-top: 0;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .online-user {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .online-user::before{
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: green;
+        margin-right: 6px;
+      }
+
+      .offline-user {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12ps;
+      }
+
+      .offline-user::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: gray;
+        margin-right: 6px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      #feed-controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+
+      #username-search {
+        flex: 1;
+        margin: 0;
+      }
+
+      .sort-buttons {
+        display: flex;
+        gap: 8px;
+      }
+
+      .sort-btn {
+        width: auto;
+        padding: 8px 14px;
+        font-size: 13px;
+        margin-top: 0;
+      }
+
+      .post-timestamp {
+        font-size: 12px;
+        font-weight: normal;
+        color: #888;
+        margin-left: 8px;
+      }
+
+      .post-reactions {
+        margin-top: 10px;
+        display: flex;
+        gap: 8px;
+      }
+
+      .reaction-btn {
+        width: auto;
+        padding: 4px 12px;
+        font-size: 13px;
+        margin-top: 0;
+        background: #f5f5f5;
+        color: #333;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+      }
+
+      .reaction-btn:hover {
+        background: #ececec;
+      }
+
+      .block-btn {
+        background: #f0a500;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 14px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+        width: 100px;
+        margin-top: 0;
+      }
+
+      #connection-status-display {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #260f00;
+      }
+
+      #error-message {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #a42c22;
+      }
+      /* dark mode button and all dark mode styles */
+      #dark-mode-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: auto;
+        padding: 8px 16px;
+        font-size: 13px;
+        margin-top: 0;
+      }
+      html.dark,
+      body.dark {
+        background-color: #1a1a2e;
+        color: #e0e0e0;
+      }
+
+      body.dark .card {
+        background: #2a2a3e;
+        border-color: #444;
+        color: #e0e0e0;
+      }
+
+      body.dark .post {
+        background: #2a2a3e;
+        border-color: #444;
+      }
+
+      body.dark .post-header {
+        color: #e0e0e0;
+      }
+
+      body.dark #message-bar {
+        background: #2a2a3e;
+        border-color: #444;
+      }
+
+      body.dark #sendMsg {
+        background: #2a2a3e;
+        color: #e0e0e0;
+      }
+
+      body.dark input {
+        background: #2a2a3e;
+        border-color: #555;
+        color: #e0e0e0;
+      }
+
+      body.dark label {
+        color: #cccccc;
+      }
+
+      body.dark .reaction-btn {
+        background: #3a3a5e;
+        color: #e0e0e0;
+        border-color: #555;
+      }
+
+      body.dark .reaction-btn:hover {
+        background: #4a4a6e;
+      }
+
+      body.dark .signup-trigger {
+        color: #cccccc;
+      }
+
+      body.dark #middle {
+        color: #e0e0e0;
+      }
+
+      body.dark #right {
+        color: #e0e0e0;
+      }
+
+      body.dark .post-timestamp {
+        color: #aaaaaa;
+      }
+
+      body.dark #connection-status-display {
+        color: #e0e0e0;
+      }
+
+      
+      .reply-btn {
+        width: auto;
+        margin-top: 0;
+        margin-left: auto;
+      }

@@ -1,0 +1,165 @@
+<html>
+
+<head>
+
+  <meta charset="utf-8" />
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <button id="dark-mode-btn" onclick="toggleDarkMode()">Dark Mode 🌙 </button>
+  <!-- user authentication section -->
+  <div class="auth-sidebar">
+    <div class="logo-container">
+      <img src="cat_chat_logo.gif" alt="cat_chat_logo animation" class="cat-chat-logo">
+    </div>
+    <div id="connection-status-display"></div>
+    <div id="error-message" class="card hidden"></div>
+
+    <!-- login -->
+    <div id="input-name" class="card">
+      <div style="margin-bottom: 10px; font-weight: bold">
+        Meowdy! Please log in.
+      </div>
+
+      <label>Username</label>
+      <input type="text" id="username" autocomplete="off" />
+
+      <label>Password</label>
+      <input type="password" id="password" autocomplete="off" />
+      <button type="button" id="show-login-pass"
+      onclick="togglePassword('password','show-login-pass')">
+        Show password
+      </button>
+
+      <button onclick="loginButton()">Enter CAT CHAT!</button>
+    </div>
+
+    <!--LOG OUT-->
+    <button id="logout-btn" onclick="logoutButton()" hidden>
+      Log out of CAT CHAT...?
+    </button>
+
+    <!-- SIGNUP -->
+    <div id="div-signup" class="card">
+      <div class="signup-trigger" onclick="toggleDropdown()">
+        <span>No account? Sign up here!</span>
+        <span id="plus-icon">+</span>
+      </div>
+
+      <div id="signup-fields">
+        <label>Username</label>
+        <input type="text" id="signup-user" />
+
+        <label>Password</label>
+        <input type="password" id="signup-pass" />
+        <button type="button" id="show-signup-pass"
+        onclick="togglePassword('signup-pass','show-signup-pass')">
+        Show password
+      </button>"
+
+        <label>Confirm Password</label>
+        <input type="password" id="signup-confirm" />
+        <button type="button" id="show-confirm-pass"
+        onclick="togglePassword('signup-confirm','show-confirm-pass')">
+        Show password
+      </button>
+
+        <button onclick="signupButton()">Join CAT CHAT!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN AREA -->
+  <div id="main-area">
+    <!-- middle column -->
+    <div id="middle">
+      <div class="custom-image-header">
+        <img src="cat_chat_whats_new.gif" alt="What's New?" class="custom-image-formatter">
+      </div>
+      <div id="message-bar" hidden>
+        <textarea id="sendMsg" placeholder="Chat about something..."></textarea>
+
+        <!-- aligning button and char counter to the right under posting field -->
+        <div class="message-footer">
+          <span id="charCounter">256 characters remaining</span>
+          <button id="sendButton" onclick="postButton()">Post</button>
+        </div>
+      </div>
+
+      <!-- sort and username search controls (shown after login) -->
+      <div id="feed-controls" hidden>
+        <input id="username-search" placeholder="Search by username..." oninput="filterByUsername()" />
+      </div>
+      <div class="sort-buttons">
+        <button class="sort-btn" onclick="sortByLikes()">Most Liked</button>
+        <button class="sort-btn" onclick="sortByRecent()">Most Recent</button>
+      </div>
+      <div id="feed"></div>
+    </div> <!-- closes #middle -->
+
+    <!-- right column -->
+    <div id="right">
+      <div class="custom-image-header">
+        <img src="cat_chat_users.gif" alt="Users" class="custom-image-formatter">
+      </div>
+      <div id="online-users"></div>
+      <div id="offline-users"></div>
+    </div>
+
+  </div> <!-- closes #main-area -->
+
+  <footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-left">
+      © 2026 CAT CHAT — All rights reserved
+    </div>
+
+    <div class="footer-right">
+      <span>Contributors:</span>
+
+      <a href="https://github.com/BudDavis" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+      </a>
+
+      <a href="https://github.com/liramarqz" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+      </a>
+
+      <a href="https://github.com/aashaswak" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+      </a>
+
+      <button class="contributors-btn" onclick="openContributors()">+</button>
+    </div>
+  </div>
+</footer>
+
+<div id="contributors-modal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeContributors()">&times;</span>
+    <h3>Contributors</h3>
+
+    <div class="contributors-list">
+      <div class="contributor"><a href="https://github.com/BudDavis" target="_blank">Bud Davis</a></div>
+      <div class="contributor"><a href="https://github.com/liramarqz" target="_blank">Lira Marquez</a></div>
+      <div class="contributor"><a href="https://github.com/aashaswak" target="_blank">Aashaswa Khakurel</a></div>
+      <div class="contributor"><a href="https://github.com/elmagarcia2" target="_blank">Elma Garcia Carranza</a></div>
+      <div class="contributor"><a href="https://github.com/bishalsapkota0" target="_blank">Bishal Sapkota</a></div>
+      <div class="contributor"><a href="https://github.com/BjhonC" target="_blank">Bjhon Christopher</a></div>
+      <div class="contributor"><a href="https://github.com/Shubham-input" target="_blank">Shubham Gupta</a></div>
+      <div class="contributor"><a href="https://github.com/derrisle1234" target="_blank">Derris Nguyen</a></div>
+      <div class="contributor"><a href="https://github.com/Tech8h" target="_blank">Techchheng Tray</a></div>
+      <div class="contributor"><a href="https://github.com/RoBotLKT" target="_blank">Lauren Tran</a></div>
+    </div>
+  </div>
+</div>
+
+  <!-- link script.js -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>

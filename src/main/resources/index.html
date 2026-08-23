@@ -1,0 +1,102 @@
+<html>
+
+<head>
+
+  <meta charset="utf-8" />
+
+  <!-- link style.css -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <button id="dark-mode-btn" onclick="toggleDarkMode()">Dark Mode 🌙 </button>
+  <!-- user authentication section -->
+  <div class="auth-sidebar">
+    <div id="connection-status-display" class="card"></div>
+
+    <div id="error-message" class="card hidden"></div>
+
+    <!-- login -->
+    <div id="input-name" class="card">
+      <div style="margin-bottom: 10px; font-weight: bold">
+        Hi! Please log in.
+      </div>
+
+      <label>Username</label>
+      <input type="text" id="username" autocomplete="off" />
+
+      <label>Password</label>
+      <input type="password" id="password" autocomplete="off" />
+
+      <button onclick="loginButton()">Login</button>
+    </div>
+
+    <!--LOG OUT-->
+    <button id="logout-btn" onclick="logoutButton()" hidden>
+      LOG OUT
+    </button>
+
+    <!-- SIGNUP -->
+    <div id="div-signup" class="card">
+      <div class="signup-trigger" onclick="toggleDropdown()">
+        <span>No account? Sign up here!</span>
+        <span id="plus-icon">+</span>
+      </div>
+
+      <div id="signup-fields">
+        <label>Username</label>
+        <input type="text" id="signup-user" />
+
+        <label>Password</label>
+        <input type="password" id="signup-pass" />
+
+        <label>Confirm Password</label>
+        <input type="password" id="signup-confirm" />
+
+        <button onclick="signupButton()">Create Account</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN AREA -->
+  <div id="main-area">
+    <!-- middle column -->
+    <div id="middle">
+      <h2>What's New</h2>
+
+      <div id="message-bar" hidden>
+        <textarea id="sendMsg" placeholder="Say something..."></textarea>
+
+        <!-- aligning button and char counter to the right under posting field -->
+        <div class="message-footer">
+          <span id="charCounter">256 characters remaining</span>
+          <button id="sendButton" onclick="postButton()">Post</button>
+        </div>
+      </div>
+
+      <!-- sort and username search controls (shown after login) -->
+      <div id="feed-controls" hidden>
+        <input id="username-search" placeholder="Search by username..." oninput="filterByUsername()" />
+        <div class="sort-buttons">
+          <button class="sort-btn" onclick="sortByLikes()">Most Liked</button>
+          <button class="sort-btn" onclick="sortByRecent()">Most Recent</button>
+        </div>
+      </div>
+<div id="feed"></div>
+    </div>  <!-- closes #middle -->
+
+    <!-- right column -->
+    <div id="right">
+      <h2>Users</h2>
+      <div id="online-users"></div>
+      <div id="offline-users"></div>
+    </div>
+
+  </div>  <!-- closes #main-area -->
+
+  <!-- link script.js -->
+  <script src="script.js"></script>
+
+</body>
+</html>
